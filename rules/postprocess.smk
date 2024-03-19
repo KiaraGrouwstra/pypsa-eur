@@ -23,8 +23,8 @@ if config["foresight"] != "perfect":
             mem_mb=4000,
         benchmark:
             BENCHMARKS + "plot_power_network_clustered/elec_s{simpl}_{clusters}"
-        conda:
-            "../envs/environment.yaml"
+        # conda:
+        #     "../envs/environment.yaml"
         script:
             "../scripts/plot_power_network_clustered.py"
 
@@ -51,8 +51,8 @@ if config["foresight"] != "perfect":
                 BENCHMARKS
                 + "plot_power_network/elec_s{simpl}_{clusters}_l{ll}_{opts}_{sector_opts}_{planning_horizons}"
             )
-        conda:
-            "../envs/environment.yaml"
+#         conda:
+#             "../envs/environment.yaml"
         script:
             "../scripts/plot_power_network.py"
 
@@ -80,8 +80,8 @@ if config["foresight"] != "perfect":
                 BENCHMARKS
                 + "plot_hydrogen_network/elec_s{simpl}_{clusters}_l{ll}_{opts}_{sector_opts}_{planning_horizons}"
             )
-        conda:
-            "../envs/environment.yaml"
+#         conda:
+#             "../envs/environment.yaml"
         script:
             "../scripts/plot_hydrogen_network.py"
 
@@ -108,8 +108,8 @@ if config["foresight"] != "perfect":
                 BENCHMARKS
                 + "plot_gas_network/elec_s{simpl}_{clusters}_l{ll}_{opts}_{sector_opts}_{planning_horizons}"
             )
-        conda:
-            "../envs/environment.yaml"
+#         conda:
+#             "../envs/environment.yaml"
         script:
             "../scripts/plot_gas_network.py"
 
@@ -136,8 +136,8 @@ if config["foresight"] == "perfect":
         benchmark:
             BENCHMARKS
             +"postnetworks/elec_s{simpl}_{clusters}_l{ll}_{opts}_{sector_opts}_brownfield_all_years_benchmark"
-        conda:
-            "../envs/environment.yaml"
+        # conda:
+        #     "../envs/environment.yaml"
         script:
             "../scripts/plot_power_network_perfect.py"
 
@@ -152,8 +152,8 @@ rule copy_config:
         mem_mb=1000,
     benchmark:
         BENCHMARKS + "copy_config"
-    conda:
-        "../envs/environment.yaml"
+    # conda:
+    #     "../envs/environment.yaml"
     script:
         "../scripts/copy_config.py"
 
@@ -230,8 +230,8 @@ rule make_summary:
         LOGS + "make_summary.log",
     benchmark:
         BENCHMARKS + "make_summary"
-    conda:
-        "../envs/environment.yaml"
+    # conda:
+    #     "../envs/environment.yaml"
     script:
         "../scripts/make_summary.py"
 
@@ -262,8 +262,8 @@ rule plot_summary:
         LOGS + "plot_summary.log",
     benchmark:
         BENCHMARKS + "plot_summary"
-    conda:
-        "../envs/environment.yaml"
+    # conda:
+    #     "../envs/environment.yaml"
     script:
         "../scripts/plot_summary.py"
 

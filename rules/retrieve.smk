@@ -36,8 +36,8 @@ if config["enable"]["retrieve"] and config["enable"].get("retrieve_databundle", 
         resources:
             mem_mb=1000,
         retries: 2
-        conda:
-            "../envs/retrieve.yaml"
+#         conda:
+#             "../envs/retrieve.yaml"
         script:
             "../scripts/retrieve_databundle.py"
 
@@ -54,8 +54,8 @@ if config["enable"].get("retrieve_irena"):
         resources:
             mem_mb=1000,
         retries: 2
-        conda:
-            "../envs/retrieve.yaml"
+#         conda:
+#             "../envs/retrieve.yaml"
         script:
             "../scripts/retrieve_irena.py"
 
@@ -98,6 +98,8 @@ if config["enable"]["retrieve"] and config["enable"].get("retrieve_cost_data", T
         resources:
             mem_mb=1000,
         retries: 2
+#         conda:
+#             "../envs/retrieve.yaml"
         run:
             move(input[0], output[0])
 
@@ -156,8 +158,8 @@ if config["enable"]["retrieve"] and config["enable"].get(
         log:
             LOGS + "retrieve_sector_databundle.log",
         retries: 2
-        conda:
-            "../envs/retrieve.yaml"
+#         conda:
+#             "../envs/retrieve.yaml"
         script:
             "../scripts/retrieve_sector_databundle.py"
 
@@ -179,8 +181,8 @@ if config["enable"]["retrieve"]:
         log:
             LOGS + "retrieve_gas_infrastructure_data.log",
         retries: 2
-        conda:
-            "../envs/retrieve.yaml"
+#         conda:
+#             "../envs/retrieve.yaml"
         script:
             "../scripts/retrieve_gas_infrastructure_data.py"
 
@@ -197,6 +199,8 @@ if config["enable"]["retrieve"]:
         resources:
             mem_mb=5000,
         retries: 2
+#         conda:
+#             "../envs/retrieve.yaml"
         script:
             "../scripts/retrieve_electricity_demand.py"
 
@@ -367,7 +371,7 @@ if config["enable"]["retrieve"]:
         resources:
             mem_mb=5000,
         retries: 2
-        conda:
-            "../envs/retrieve.yaml"
+#         conda:
+#             "../envs/retrieve.yaml"
         script:
             "../scripts/retrieve_monthly_fuel_prices.py"

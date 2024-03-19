@@ -107,8 +107,8 @@ rule dag:
         dot=RESOURCES + "dag.dot",
         pdf=RESOURCES + "dag.pdf",
         png=RESOURCES + "dag.png",
-    conda:
-        "envs/environment.yaml"
+    # conda:
+    #     "envs/environment.yaml"
     shell:
         """
         snakemake --rulegraph all | sed -n "/digraph/,\$p" > {output.dot}

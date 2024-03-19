@@ -40,8 +40,8 @@ rule add_existing_baseyear:
             BENCHMARKS
             + "add_existing_baseyear/elec_s{simpl}_{clusters}_l{ll}_{opts}_{sector_opts}_{planning_horizons}"
         )
-    conda:
-        "../envs/environment.yaml"
+#     conda:
+#         "../envs/environment.yaml"
     script:
         "../scripts/add_existing_baseyear.py"
 
@@ -81,8 +81,8 @@ rule add_brownfield:
             BENCHMARKS
             + "add_brownfield/elec_s{simpl}_{clusters}_l{ll}_{opts}_{sector_opts}_{planning_horizons}"
         )
-    conda:
-        "../envs/environment.yaml"
+#     conda:
+#         "../envs/environment.yaml"
     script:
         "../scripts/add_brownfield.py"
 
@@ -123,7 +123,7 @@ rule solve_sector_network_myopic:
             BENCHMARKS
             + "solve_sector_network/elec_s{simpl}_{clusters}_l{ll}_{opts}_{sector_opts}_{planning_horizons}"
         )
-    conda:
-        "../envs/environment.yaml"
+#     conda:
+#         "../envs/environment.yaml"
     script:
         "../scripts/solve_network.py"

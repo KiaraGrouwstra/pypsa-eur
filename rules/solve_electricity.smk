@@ -31,8 +31,8 @@ rule solve_network:
         walltime=config["solving"].get("walltime", "12:00:00"),
     shadow:
         "minimal"
-    conda:
-        "../envs/environment.yaml"
+#     conda:
+#         "../envs/environment.yaml"
     script:
         "../scripts/solve_network.py"
 
@@ -62,7 +62,7 @@ rule solve_operations_network:
         walltime=config["solving"].get("walltime", "12:00:00"),
     shadow:
         "minimal"
-    conda:
-        "../envs/environment.yaml"
+#     conda:
+#         "../envs/environment.yaml"
     script:
         "../scripts/solve_operations_network.py"
