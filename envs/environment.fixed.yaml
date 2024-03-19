@@ -125,7 +125,6 @@ dependencies:
   - glib=2.78.4
   - glib-tools=2.78.4
   - glog=0.6.0
-  - glpk=5.0
   - gmp=6.3.0
   - graphite2=1.3.13
   - graphviz=9.0.0
